@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "syscalls"
+version = "0.1.0"
+description = ""
+authors = ["novafacing <novafacing@shemhazi>"]
+
+[tool.poetry.dependencies]
+python = "3.8.10"
+pycparser = "^2.21"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b"
+pylint = "^2.11.1"
+isort = "^5.10.1"
+pytest = "^6.2.5"
+mypy = "^0.910"
+pytest-cov = "^3.0.0"
+poetry = "^1.1.11"
+pre-commit = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.messages_control]
+max-line-length = 88
+disable = ["attribute-defined-outside-init", "logging-fstring-interpolation"]
+
+[tool.pylint.basic]
+argument-naming-style = "snake_case"
+attr-naming-style = "snake_case"
+class-attribute-naming-style = "snake_case"
+class-naming-style = "PascalCase"
+const-naming-style = "UPPER_CASE"
+function-naming-style = "snake_case"
+method-naming-style = "snake_case"
+module-naming-style = "snake_case"
+variable-naming-style = "any"
+
+[tool.pylint.format]
+expected-line-ending-format = "LF"
+max-module-lines = 600
+logging-format-style = "new"
+max-args = 6
+max-attributes = 12
+max-bool-expr = 4
+max-locals = 16
+max-parents = 7
+max-public-methods = 16
+max-statements = 64
+min-public-methods = 1
+
+[tool.pylint.exceptions]
+overgeneral-exceptions = "Exception"
+
+[tool.black]
+line-length = 88
+target-version = ["py36","py37","py38"]
+
+[tool.mypy]
+follow_imports = "normal"
+disallow_any_unimported = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+use_parentheses = true
+
+

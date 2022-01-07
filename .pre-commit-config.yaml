@@ -1,0 +1,44 @@
+repos:
+- hooks:
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  - id: debug-statements
+  repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.3.0
+- hooks:
+  - id: check-hooks-apply
+  - id: check-useless-excludes
+  repo: meta
+- hooks:
+  - id: black
+  repo: https://github.com/psf/black
+  rev: 21.11b1
+- hooks:
+  - id: mypy
+  repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v0.910
+- hooks:
+  - id: isort
+    name: isort (python)
+  repo: https://github.com/pycqa/isort
+  rev: 5.10.1
+- hooks:
+  - args:
+    - syscalls
+    entry: pytest
+    id: tests
+    language: system
+    name: pytest
+    pass_filenames: false
+    types:
+    - python3
+  - args:
+    - syscalls
+    entry: pylint
+    id: pylint
+    language: system
+    name: pylint
+    pass_filenames: false
+    types:
+    - python3
+  repo: local
