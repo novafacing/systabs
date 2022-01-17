@@ -68,9 +68,7 @@ class SyscallParser:
         self.check_tag()
         self.mapping: defaultdict = defaultdict(dict)
         self.defs: Dict[Path, List[SyscallDefinition]] = {}
-        self.outfile = (
-            stdout if not args.outfile is not None else args.outfile.open("w")
-        )
+        self.outfile = stdout if not args.outfile is not None else args.outfile
 
     def check_path(self) -> None:
         """
@@ -188,7 +186,16 @@ class SyscallParser:
                         # f" Table\n:{linesep.join(map(str, arch_sysnums))}"
                     )
 
-        self.output((arch, bits), self.outfile, arch_syscall_defineset)
+        self.output(
+            (arch, bits),
+            self.outfile
+            if self.outfile == stdout
+            else (
+                self.outfile.parent
+                / (self.outfile.stem + f"_{arch.value.upper()}_{bits}" + ".md")
+            ).open("w"),
+            arch_syscall_defineset,
+        )
 
     def parse(self) -> None:
         """
@@ -240,7 +247,7 @@ class SyscallParser:
         :param defs: The parsed syscall information.
         """
 
-        f.write(f"\n##  {s[0]} {s[1]}-bit\n\n")
+        f.write(f"\n#  {s[0]} {s[1]}-bit\n\n")
 
         f.write(
             "| Syscall # | Name | Entry Points | # Arguments "
