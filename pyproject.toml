@@ -6,7 +6,10 @@ authors = ["novafacing <novafacing@shemhazi>"]
 
 [tool.poetry.dependencies]
 python = "3.8.10"
-pycparser = "^2.21"
+pygit2 = "^1.7.2"
+ptpython = "^3.0.20"
+tree-sitter = "^0.20.0"
+more-itertools = "^8.12.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.11b"
