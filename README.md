@@ -13,4 +13,4 @@ python3 -m syscalls -p ~/Downloads/linux -f md -o ./syscalls/build/SPEC.md
 
 ## Tables
 
-Pre-generated tables can be found in the [build](build) directory.
+Pre-generated tables can be found in the [tables](tables) directory.
