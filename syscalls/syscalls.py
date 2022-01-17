@@ -9,17 +9,17 @@ from logging import getLogger
 from os import linesep
 from pathlib import Path
 from pprint import pformat
-from typing import IO, Dict, List, Optional, Tuple
 from sys import stdout
+from typing import IO, Dict, List, Optional, Tuple
 
 from more_itertools import padded
 from pygit2 import Repository
 
 from syscalls.architectures import (
+    ALL_ARCHES,
     ARCH_SYSCALL_IMPLEMENTATIONS,
     ARCH_SYSTAB,
     ARCHITECTURE,
-    ALL_ARCHES,
     GENERIC_SYSCALL_IMPLEMENTATIONS,
 )
 from syscalls.parser.parser import TBL, CLang, SyscallDefinition
