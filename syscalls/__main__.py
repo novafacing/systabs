@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 from pathlib import Path
+from typing import Optional
 
 from syscalls.architectures import ARCHITECTURE
 from syscalls.syscalls import OUTPUT_FMT, run
@@ -39,6 +40,13 @@ if __name__ == "__main__":
         required=False,
         default="md",
         help="Output format. Defaults to markdown.",
+    )
+    parser.add_argument(
+        "--outfile",
+        "-o",
+        type=Path,
+        default=None,
+        help="Output file. Defaults to stdout.",
     )
 
     args = parser.parse_args()
