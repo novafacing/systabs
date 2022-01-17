@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 from pathlib import Path
 
 from syscalls.architectures import ARCHITECTURE
-from syscalls.syscalls import run, OUTPUT_FMT
+from syscalls.syscalls import OUTPUT_FMT, run
 
 if __name__ == "__main__":
     parser = ArgumentParser(prog="syscalls")
