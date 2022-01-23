@@ -17,6 +17,6 @@ Pre-generated tables can be found in the [tables](tables) directory.
 
 ## Roadmap
 
-* Searchable site [ ]
-* Parse and hotlink struct definitions [ ]
-* Validation/testing against common table definitions [ ]
+- [ ] Searchable site
+- [ ] Parse and hotlink struct definitions
+- [ ] Validation/testing against common table definitions
